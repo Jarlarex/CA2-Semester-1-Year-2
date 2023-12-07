@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CA2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
 
 
 
@@ -30,7 +30,7 @@
         </StackPanel>
 
 
-        <ListBox x:Name="lbxTeams" Grid.Row="2" Grid.Column="1"/>
+        <ListBox x:Name="lbxTeams" Grid.Row="2" Grid.Column="1" SelectionChanged="lbxTeams_SelectionChanged"/>
         <ListBox x:Name="lbxPlayers" Grid.Row="2" Grid.Column="3" />
         <TextBlock x:Name="tblkTeams" Grid.Row="1" Grid.Column="1" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Teams"/>
         <TextBlock x:Name="tblkPlayers" Grid.Row="1" Grid.Column="3" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Players"/>
