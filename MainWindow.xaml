@@ -6,9 +6,48 @@
         xmlns:local="clr-namespace:CA2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="61,153,517,53"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="355,153,223,53"/>
+
+
+
+    <Grid x:Name="grdMain">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="290"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="290"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="220" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6">
+            <TextBlock x:Name="tblkTitle" FontSize="40" Text="Tiddlywinks World Cup" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40"/>
+        </StackPanel>
+
+
+        <ListBox x:Name="lbxTeams" Grid.Row="2" Grid.Column="1"/>
+        <ListBox x:Name="lbxPlayers" Grid.Row="2" Grid.Column="3" />
+        <TextBlock x:Name="tblkTeams" Grid.Row="1" Grid.Column="1" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Teams"/>
+        <TextBlock x:Name="tblkPlayers" Grid.Row="1" Grid.Column="3" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Players"/>
+        <TextBlock x:Name="tblkRatings" Grid.Row="1" Grid.Column="5" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Player Rating"/>
+
+        <StackPanel Grid.Column="5" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Image x:Name="imgStar1" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
+            <Image x:Name="imgStar2" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
+            <Image x:Name="imgStar3" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
+        </StackPanel>
+
+        <TextBlock x:Name="tblkRecordResult" Grid.Column="5" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Text="Record Result" VerticalAlignment="Center" Width="80"/>
+        <Button x:Name="btnWin" Grid.Column="5" Content="Win" HorizontalAlignment="Center" Margin="0,140,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
+        <Button x:Name="btnLoss" Grid.Column="5" Content="Loss" HorizontalAlignment="Center" Margin="0,170,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
+        <Button x:Name="btnDraw" Grid.Column="5" Content="Draw" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
+        
+
 
     </Grid>
 </Window>
