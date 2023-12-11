@@ -32,7 +32,7 @@ namespace CA2
 
         public void GetData()
         {
-            Team t1 = new Team()
+            Team france = new Team()
             {
                 Name = "France",
                 Players = new List<Player>
@@ -43,7 +43,7 @@ namespace CA2
                 }
             };
 
-            Team t2 = new Team()
+            Team italy = new Team()
             {
                 Name = "Italy",
                 Players = new List<Player>
@@ -54,7 +54,7 @@ namespace CA2
                 }
             };
 
-            Team t3 = new Team()
+            Team spain = new Team()
             {
                 Name = "Spain",
                 Players = new List<Player>
@@ -65,9 +65,11 @@ namespace CA2
                 }
             };
 
-            teams.Add(t1);
-            teams.Add(t2);
-            teams.Add(t3);
+            teams.Add(france);
+            teams.Add(italy);
+            teams.Add(spain);
+
+            lbxTeams.ItemsSource = teams;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -83,24 +85,19 @@ namespace CA2
             }
         }
 
-        ////French players
-        //Player p1 = new Player() { Name = "Marie", ResultRecord = "WWDDL" };
-        //Player p2 = new Player() { Name = "Claude", ResultRecord = "DDDLW" };
-        //Player p3 = new Player() { Name = "Antoine", ResultRecord = "LWDLW" };
+        private void btnWin_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
-        ////Italian players
-        //Player p4 = new Player() { Name = "Marco", ResultRecord = "WWDLL" };
-        //Player p5 = new Player() { Name = "Giovanni", ResultRecord = "LLLLD" };
-        //Player p6 = new Player() { Name = "Valentina", ResultRecord = "DLWWW" };
+        private void btnLoss_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
-        ////Spanish players
-        //Player p7 = new Player() { Name = "Maria", ResultRecord = "WWWWW" };
-        //Player p8 = new Player() { Name = "Jose", ResultRecord = "LLLLL" };
-        //Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD" };
-
-
-        //Team t1 = new Team() { Name = "France" };
-        //Team t2 = new Team() { Name = "Italy" };
-        //Team t3 = new Team() { Name = "Spain" };
+        private void btnDraw_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

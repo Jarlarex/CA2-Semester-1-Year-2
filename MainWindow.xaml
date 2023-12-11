@@ -37,15 +37,15 @@
         <TextBlock x:Name="tblkRatings" Grid.Row="1" Grid.Column="5" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Player Rating"/>
 
         <StackPanel Grid.Column="5" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Image x:Name="imgStar1" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
-            <Image x:Name="imgStar2" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
-            <Image x:Name="imgStar3" Grid.Column="5" Height="30"  Width="30"  Margin="5" Source="/staroutline.png"/>
+            <Image x:Name="imgStar1" Grid.Column="5" Height="30"  Width="30"  Margin="5" />
+            <Image x:Name="imgStar2" Grid.Column="5" Height="30"  Width="30"  Margin="5" />
+            <Image x:Name="imgStar3" Grid.Column="5" Height="30"  Width="30"  Margin="5" />
         </StackPanel>
 
         <TextBlock x:Name="tblkRecordResult" Grid.Column="5" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Text="Record Result" VerticalAlignment="Center" Width="80"/>
-        <Button x:Name="btnWin" Grid.Column="5" Content="Win" HorizontalAlignment="Center" Margin="0,140,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
-        <Button x:Name="btnLoss" Grid.Column="5" Content="Loss" HorizontalAlignment="Center" Margin="0,170,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
-        <Button x:Name="btnDraw" Grid.Column="5" Content="Draw" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62"/>
+        <Button x:Name="btnWin" Grid.Column="5" Content="Win" HorizontalAlignment="Center" Margin="0,140,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62" Click="btnWin_Click"/>
+        <Button x:Name="btnLoss" Grid.Column="5" Content="Loss" HorizontalAlignment="Center" Margin="0,170,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62" Click="btnLoss_Click"/>
+        <Button x:Name="btnDraw" Grid.Column="5" Content="Draw" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Row="2" VerticalAlignment="Top" Width="62" Click="btnDraw_Click"/>
         
 
 
