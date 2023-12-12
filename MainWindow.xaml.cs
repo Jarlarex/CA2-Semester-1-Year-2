@@ -32,7 +32,7 @@ namespace CA2
 
         public void GetData()
         {
-            Team france = new Team()
+            teams.Add(new Team
             {
                 Name = "France",
                 Players = new List<Player>
@@ -41,9 +41,9 @@ namespace CA2
                     new Player() { Name = "Claude", ResultRecord = "DDDLW" },
                     new Player() { Name = "Antoine", ResultRecord = "LWDLW" }
                 }
-            };
+            });
 
-            Team italy = new Team()
+            teams.Add(new Team
             {
                 Name = "Italy",
                 Players = new List<Player>
@@ -52,9 +52,9 @@ namespace CA2
                     new Player() { Name = "Giovanni", ResultRecord = "LLLLD" },
                     new Player() { Name = "Valentina", ResultRecord = "DLWWW" }
                 }
-            };
+            });
 
-            Team spain = new Team()
+            teams.Add(new Team
             {
                 Name = "Spain",
                 Players = new List<Player>
@@ -63,12 +63,15 @@ namespace CA2
                     new Player() { Name = "Jose", ResultRecord = "LLLLL" },
                     new Player() { Name = "Pablo", ResultRecord = "DDDDD" }
                 }
-            };
+            });
 
-            teams.Add(france);
-            teams.Add(italy);
-            teams.Add(spain);
+            UpdateTeamListBox();
+        }
 
+        private void UpdateTeamListBox()
+        {
+            teams.Sort();
+            lbxTeams.ItemsSource = null;
             lbxTeams.ItemsSource = teams;
         }
 
@@ -87,17 +90,34 @@ namespace CA2
 
         private void btnWin_Click(object sender, RoutedEventArgs e)
         {
-            
+            UpdatePlayerResult('W');
         }
 
         private void btnLoss_Click(object sender, RoutedEventArgs e)
         {
-            
+            UpdatePlayerResult('L');
         }
 
         private void btnDraw_Click(object sender, RoutedEventArgs e)
         {
-            
+            UpdatePlayerResult('D');
+        }
+
+        private void UpdatePlayerResult(char result)
+        {
+            if (lbxPlayers.SelectedItem is Player selectedPlayer)
+            {
+                if (selectedPlayer.ResultRecord.Length >= 5)
+                {
+                    selectedPlayer.ResultRecord = selectedPlayer.ResultRecord.Substring(1) + result;
+                }
+                else
+                {
+                    selectedPlayer.ResultRecord += result;
+                }
+                lbxPlayers.Items.Refresh();
+                UpdateTeamListBox();
+            }
         }
     }
 }

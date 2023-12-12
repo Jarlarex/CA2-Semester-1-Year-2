@@ -24,6 +24,7 @@ namespace CA2
             }
         }
 
+
         public override string ToString()
         {
             return $"{Name} - Points: {Points}";
@@ -31,7 +32,7 @@ namespace CA2
 
         public int CompareTo(Team other)
         {
-            return this.Points.CompareTo(other.Points);
+            return other.Points.CompareTo(this.Points);
         }
     }
 }
