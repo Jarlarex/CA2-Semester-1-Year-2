@@ -19,6 +19,10 @@ namespace CA2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+    //LINK TO GITHUB REPOSITORY: https://github.com/Jarlarex/CA2-Semester-1-Year-2
+
     public partial class MainWindow : Window
     {
         //List to hold all the teams
