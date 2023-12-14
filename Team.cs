@@ -10,7 +10,7 @@ namespace CA2
     {
         public string Name { get; set; }
         public List<Player> Players { get; set; }
-
+        //Property to calculate the total team points
         public int Points
         {
             get
@@ -24,12 +24,13 @@ namespace CA2
             }
         }
 
-
+        //Override ToString for UI display
         public override string ToString()
         {
-            return $"{Name} - Points: {Points}";
+            return $"{Name} - {Points}";
         }
 
+        //CompareTo for sorting teams based on points
         public int CompareTo(Team other)
         {
             return other.Points.CompareTo(this.Points);

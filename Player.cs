@@ -10,7 +10,7 @@ namespace CA2
     {
         public string Name { get; set; }
         public string ResultRecord { get; set; }
-
+        //Property to calculate the points based on last five matches
         public int Points
         {
             get
@@ -18,6 +18,7 @@ namespace CA2
                 int points = 0;
                 int count = 0;
 
+                //Loop through the last five results and calculate points
                 for (int i = ResultRecord.Length - 1; i >= 0 && count < 5; i--, count++)
                 {
                     switch (ResultRecord[i])
@@ -37,9 +38,19 @@ namespace CA2
             }
         }
 
+        //Method to update the player's result record
+        public void RecordResult(char result)
+        {
+            ResultRecord = ResultRecord.Substring(1);
+
+            ResultRecord += result;
+        }
+
+        //Override ToString for better UI display
         public override string ToString()
         {
-            return $"{Name} - {ResultRecord} - Points: {Points}";
+            return $"{Name} - {ResultRecord} - {Points}";
         }
+
     }
 }
