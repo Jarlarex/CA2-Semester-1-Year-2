@@ -26,7 +26,6 @@ namespace CA2
         public MainWindow()
         {
             InitializeComponent();
-
             GetData();
         }
 
@@ -117,7 +116,29 @@ namespace CA2
                 }
                 lbxPlayers.Items.Refresh();
                 UpdateTeamListBox();
+                UpdateStarRating(selectedPlayer);
             }
         }
+
+        private void UpdateStarRating(Player player)
+        {
+            imgStar1.Source = new BitmapImage(new Uri("staroutline.png", UriKind.Relative));
+            imgStar2.Source = new BitmapImage(new Uri("staroutline.png", UriKind.Relative));
+            imgStar3.Source = new BitmapImage(new Uri("staroutline.png", UriKind.Relative));
+
+            if (player.Points >= 5)
+            {
+                imgStar1.Source = new BitmapImage(new Uri("starsolid.png", UriKind.Relative));
+            }
+            if (player.Points >= 10)
+            {
+                imgStar2.Source = new BitmapImage(new Uri("starsolid.png", UriKind.Relative));
+            }
+            if (player.Points >= 15)
+            {
+                imgStar3.Source = new BitmapImage(new Uri("starsolid.png", UriKind.Relative));
+            }
+        }
+
     }
 }

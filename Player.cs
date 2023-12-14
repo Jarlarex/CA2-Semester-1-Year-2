@@ -43,4 +43,3 @@ namespace CA2
         }
     }
 }
-
